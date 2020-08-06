@@ -1,0 +1,6 @@
+localhost  ansible_connection=local
+ubuntu-1.lan
+nas.lan
+
+[all:vars]
+ansible_user=scott
