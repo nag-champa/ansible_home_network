@@ -1,0 +1,12 @@
+---
+
+- hosts: all
+  become: true
+
+  tasks:
+  - name: update & install packages
+    include_role: name=roles/ansible_role_packages
+
+  - name: create users & groups
+    include_tasks: user-accounts.yml
+
