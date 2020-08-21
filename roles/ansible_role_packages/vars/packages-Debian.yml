@@ -10,4 +10,5 @@ my_packages:
   - vim
   - bat
   - tree
-  - curl  
+  - curl
+  - net-tools  

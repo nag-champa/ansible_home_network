@@ -10,3 +10,4 @@ my_packages:
   - tree
   - neofetch
   - curl
+  - net-tools
