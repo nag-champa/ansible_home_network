@@ -34,15 +34,15 @@
       name: "{{ item }}"
       state: absent
       remove: yes
-    loop: "{{ rm_users }}"
-    when: rm_users | length > 0
+    loop: "{{ remove_users }}"
+    when: remove_users | length > 0
     
-  # - name: Copy ssh key for admin users.
-  #   authorized_key:
-  #     user: "{{ item }}"
-  #     state: present
-  #     key: "{{ lookup('file', '../files/ansible-key.pub') }}"
-  #   loop: "{{ admin_users }}"
-  #   when: admin_users | length > 0
+  - name: Copy ssh public key for admin user scott.
+    authorized_key:
+      user: "{{ item }}"
+      state: present
+      key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPVhku7YVjXRRdwjRtnfh8k+vXaAyhfpepRblkPcmHei scott"
+    loop: "{{ admin_users }}"
+    when: admin_users | length > 0
 
   

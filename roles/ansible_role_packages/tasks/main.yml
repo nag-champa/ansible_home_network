@@ -5,11 +5,13 @@
   include_vars: "../vars/packages-{{ ansible_os_family }}.yml"
 
 - name: Update Debian app cache if older than 1 hour.
-  package: update_cache=yes cache_valid_time=3600
+  package: update_cache=yes cache_valid_time=3600 
+  changed_when: false
   when: ansible_os_family == 'Debian'
 
 - name: Update RedHat app cache.
-  package: update_cache=yes state=present
+  package: update_cache=yes state=present 
+  changed_when: false
   when: ansible_os_family == 'RedHat'
 
 - name: Install epel-release repository - RedHat only.

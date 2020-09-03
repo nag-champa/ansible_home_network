@@ -10,5 +10,5 @@ add_groups: []
 admin_users: [scott]
   
 # Remove user accounts
-rm_users: [centos,ubuntu,deploy]
+remove_users: [centos,ubuntu,deploy]
   
