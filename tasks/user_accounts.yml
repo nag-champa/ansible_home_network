@@ -37,7 +37,7 @@
     loop: "{{ remove_users }}"
     when: remove_users | length > 0
     
-  - name: Copy ssh public key for admin user scott.
+  - name: Copy ssh public key for admin users.
     authorized_key:
       user: "{{ item }}"
       state: present

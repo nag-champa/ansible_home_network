@@ -1,0 +1,12 @@
+---
+
+- hosts: all
+  become: true
+
+  pre_tasks:
+  - name: Update app cache.
+    package: update_cache=yes
+    changed_when: false
+
+  tasks:
+

@@ -11,4 +11,5 @@ my_packages:
   - bat
   - tree
   - curl
-  - net-tools  
+  - net-tools
+  
