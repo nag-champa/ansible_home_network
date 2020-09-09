@@ -6,12 +6,6 @@
   package: update_cache=yes
   changed_when: false
 
-- name: Install epel-release repository - RedHat only.
-  package: 
-    name: epel-release
-    state: present
-  when: ansible_os_family == 'RedHat'
-
 - name: Upgrade all packages to the latest version.
   package:
     name: "*"
