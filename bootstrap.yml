@@ -1,12 +1,44 @@
 ---
 
-- hosts: all
+- name: bootstrap new server
+  hosts: new
   become: true
+  gather_facts: false
+
+  vars:
+    ansible_user: root
+    #admin_group: "{{ 'admin' if ansible_os_family == 'Debian' else 'wheel' if ansible_os_family == 'RedHat' }}"
 
   pre_tasks:
-  - name: Update app cache.
+  - name: update app cache.
     package: update_cache=yes
     changed_when: false
 
   tasks:
+    - include_tasks: tasks/base_config.yml
+
+    - name: create deploy user
+      user:
+        name: ansybull
+        create_home: true
+        groups: "{{ admin_group }}"
+        comment: 'ansible deploy account'
+        expires: -1
+        shell: "/bin/bash"
+        password: "$6$mysecretsalt$0NnyOZX0dMq6U1XULJo4Q30MXz9xxtdbIXArzELGKuaBpPsSAysq5NLiNGWlg2oZBpuhqtZNZOZCZizLsC25S0" 
+
+    - name: push ssh key to deploy user
+      authorized_key:
+        user: ansybull
+        state: present
+        manage_dir: true
+        key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPVhku7YVjXRRdwjRtnfh8k+vXaAyhfpepRblkPcmHei scott"
+    
+    - name: set up passwordless sudo for deploy user
+      copy:
+        dest: /etc/sudoers.d/ansybull
+        owner: root
+        mode: 0440
+        content: 'ansybull ALL=(ALL)  NOPASSWD: ALL'
+        validate: /usr/sbin/visudo -cf %s
 
