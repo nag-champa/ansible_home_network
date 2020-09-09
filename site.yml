@@ -1,7 +1,11 @@
 ---
 
-- hosts: all
+- name: configure servers
+  hosts: home_net
   become: true
+
+  vars:
+    ansible_user: scott
 
  
   tasks:

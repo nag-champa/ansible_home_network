@@ -1,6 +1,14 @@
+[home_net]
 localhost  ansible_connection=local
 ubuntu-1.lan
-#nas.lan
+nas.lan
 
-[all:vars]
-ansible_user=scott
+[centos]
+161.35.119.122
+
+[ubuntu]
+167.99.234.50
+
+[new:children]
+centos
+ubuntu
