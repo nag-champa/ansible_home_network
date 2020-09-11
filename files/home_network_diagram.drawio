@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-09-10T22:29:06.831Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36" etag="AHSVuxPqggvKh75ix8Tc" version="13.6.9" type="github">
+<mxfile host="app.diagrams.net" modified="2020-09-11T00:57:46.385Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36" etag="x6NfLMUen16elqRgI80V" version="13.6.9" type="github">
   <diagram id="ifPVkkNWPCx1PBxa3f1W" name="Page-1">
     <mxGraphModel dx="946" dy="646" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -37,7 +37,7 @@
         <mxCell id="aL_iIcGIK7Afld9mCZSJ-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" parent="1" source="aL_iIcGIK7Afld9mCZSJ-8" target="aL_iIcGIK7Afld9mCZSJ-6" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="aL_iIcGIK7Afld9mCZSJ-8" value="tplink" style="rounded=1;whiteSpace=wrap;html=1;arcSize=0;" parent="1" vertex="1">
+        <mxCell id="aL_iIcGIK7Afld9mCZSJ-8" value="tplink&lt;br&gt;(8 port poe)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=0;" parent="1" vertex="1">
           <mxGeometry x="340" y="360" width="80" height="30" as="geometry" />
         </mxCell>
         <mxCell id="aL_iIcGIK7Afld9mCZSJ-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="aL_iIcGIK7Afld9mCZSJ-11" target="aL_iIcGIK7Afld9mCZSJ-8" edge="1">
@@ -59,7 +59,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="aL_iIcGIK7Afld9mCZSJ-20" value="pi-nas&lt;br&gt;192.168.50.20" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
-          <mxGeometry x="530" y="200" width="110" height="40" as="geometry" />
+          <mxGeometry x="530" y="200" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="FUUc-pOVJsnHqT-475pJ-5" value="Family Room" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
           <mxGeometry x="130" y="160" width="40" height="20" as="geometry" />
