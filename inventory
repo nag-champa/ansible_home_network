@@ -4,10 +4,9 @@ ubuntu-1.lan
 nas.lan
 
 [centos]
-161.35.119.122
 
 [ubuntu]
-167.99.234.50
+159.89.54.91
 
 [new:children]
 centos
