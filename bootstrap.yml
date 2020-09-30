@@ -7,7 +7,9 @@
 
   vars:
     ansible_user: root
-    #admin_group: "{{ 'admin' if ansible_os_family == 'Debian' else 'wheel' if ansible_os_family == 'RedHat' }}"
+  
+  vars_files:
+    - vars/secrets
 
   pre_tasks:
   - name: update app cache.
@@ -25,8 +27,8 @@
         comment: 'ansible deploy account'
         expires: -1
         shell: "/bin/bash"
-        password: "$6$mysecretsalt$0NnyOZX0dMq6U1XULJo4Q30MXz9xxtdbIXArzELGKuaBpPsSAysq5NLiNGWlg2oZBpuhqtZNZOZCZizLsC25S0" 
-
+        password: "{{ password }}"
+        
     - name: push ssh key to deploy user
       authorized_key:
         user: ansybull
