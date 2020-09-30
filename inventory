@@ -6,8 +6,11 @@ nas.lan
 [centos]
 
 [ubuntu]
-159.89.54.91
+157.245.254.204 
 
 [new:children]
 centos
 ubuntu
+
+[new:vars]
+ansible_user = ansybull
