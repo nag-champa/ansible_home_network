@@ -1,0 +1,31 @@
+---
+#Play: Base Server Config
+- name: configure server
+  hosts: new
+  become: true
+
+  vars:
+    ansible_user: ansybull
+
+  pre_tasks:
+    - include_tasks: tasks/update_packages.yml
+    - include_tasks: tasks/base_config.yml
+    - include_tasks: tasks/user_accounts.yml
+
+  roles:
+    - role: install_packages
+    - role: geerlingguy.security
+
+# Play: Configuring Samba Server
+- name: configure samba server
+  hosts: samba_server
+  become: true
+
+  vars:
+    ansible_user: ansybull
+  
+  tasks:
+    - include_tasks: tasks/smb.yml
+
+  handlers:
+    - include: tasks/handlers.yml

@@ -11,14 +11,7 @@
   vars_files:
     - vars/secrets
 
-  pre_tasks:
-  - name: update app cache.
-    package: update_cache=yes
-    changed_when: false
-
   tasks:
-    - include_tasks: tasks/base_config.yml
-
     - name: create deploy user
       user:
         name: ansybull
@@ -44,3 +37,4 @@
         content: 'ansybull ALL=(ALL)  NOPASSWD: ALL'
         validate: /usr/sbin/visudo -cf %s
 
+- import_playbook: site-test.yml

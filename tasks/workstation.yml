@@ -1,0 +1,10 @@
+---
+- name: copy .bash_aliases to /home/scott/
+  copy:
+    src: ./files/dot_bash_aliases
+    dest: /home/scott/.bash_aliases
+    mode: 0640
+    backup: yes
+
+...
+

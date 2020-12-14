@@ -1,12 +1,13 @@
 [home_net]
-localhost  ansible_connection=local
+#localhost  ansible_connection=local
 ubuntu-1.lan
 nas.lan
+pop-os.lan
 
 [centos]
 
 [ubuntu]
-157.245.254.204 
+#157.230.232.155
 
 [new:children]
 centos
@@ -14,3 +15,9 @@ ubuntu
 
 [new:vars]
 ansible_user = ansybull
+
+[samba_server]
+157.230.232.155
+
+[workstation]
+localhost

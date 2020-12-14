@@ -1,0 +1,8 @@
+---
+
+# Handlers
+
+- name: restart_smbd
+  service:
+    name: smbd
+    state: restarted

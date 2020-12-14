@@ -1,11 +1,11 @@
 ---
 
-- name: configure servers
-  hosts: all
+- name: configure all hosts
+  hosts: home_net
   become: true
 
   vars:
-   # ansible_user: scott
+    ansible_user: scott
 
  
   tasks:
@@ -13,4 +13,14 @@
     - include_tasks: tasks/base_config.yml
     - include_tasks: tasks/user_accounts.yml
     - include_role: name=install_packages
+
+- name: configure workstations
+  hosts: workstation
+  become: true
+
+  vars:
+    ansible_user: scott
+
+  tasks:
+    - include_tasks: tasks/workstation.yml
 

@@ -1,0 +1,6 @@
+# My Aliases
+alias bat='batcat'
+alias ap='ansible-playbook'
+alias poing='ping'
+alias free='free -h'
+
