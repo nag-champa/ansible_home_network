@@ -1,0 +1,24 @@
+---
+# tasks to complete before running roles
+- hosts: localhost
+  tags: always
+  become: true
+  pre_tasks:
+    - name: pre-run | update package cache (arch)
+      tags: always
+      pacman: update_cache=yes
+      changed_when: False
+      when: ansible_distribution == "Archlinux"
+
+    - name: pre-run | update package cache (debian, etc)
+      tags: always
+      apt: update_cache=yes
+      changed_when: False
+      when: ansible_distribution in ["Debian", "Ubuntu"]
+
+  tasks:
+
+    - name: users | root | ensure account is locked
+      user:
+        name: root
+        password_lock: yes
