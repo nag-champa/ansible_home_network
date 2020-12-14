@@ -1,6 +1,6 @@
 ---
 
-- name: configure all hosts
+- name: base configuration for all hosts
   hosts: home_net
   become: true
 

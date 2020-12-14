@@ -3,6 +3,8 @@
   copy:
     src: ./files/dot_bash_aliases
     dest: /home/scott/.bash_aliases
+    owner: scott
+    group: scott
     mode: 0640
     backup: yes
 
