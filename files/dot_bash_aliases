@@ -3,4 +3,6 @@ alias bat='batcat'
 alias ap='ansible-playbook'
 alias poing='ping'
 alias free='free -h'
+alias update='sudo apt update && sudo apt upgrade -y'
+alias site='cd ~/code/ansible/homelab/; ap -K ~/code/ansible/homelab/site.yml'
 
