@@ -1,0 +1,4 @@
+## Delete root password and disable account
+sudo passwd -dl root
+
+ansible-playbook --vault-password-file ~/code/private/ansible_vault_key bootstrap.yml

@@ -1,0 +1,29 @@
+[NEW]
+#localhost ansible_connection=local
+floyd.lan
+
+[new:children]
+#centos
+#ubuntu
+
+[home_net]
+#localhost  ansible_connection=local
+#ubuntu-1.lan
+#nas.lan
+#pop-os.lan
+
+[centos]
+
+[ubuntu]
+#157.230.232.155
+
+[new:vars]
+#ansible_user = ansybull
+
+[samba_server]
+#157.230.232.15
+
+[workstation]
+#localhost
+
+[UNIFI]

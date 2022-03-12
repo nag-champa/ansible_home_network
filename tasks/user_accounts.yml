@@ -41,7 +41,7 @@
     authorized_key:
       user: "{{ item }}"
       state: present
-      key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPVhku7YVjXRRdwjRtnfh8k+vXaAyhfpepRblkPcmHei scott"
+      key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAWY9qDM5/3B9eMk/KCRJvJQRXkJu3c4CthAC2csLQMY ansybull deploy"
     loop: "{{ admin_users }}"
     when: admin_users | length > 0
 

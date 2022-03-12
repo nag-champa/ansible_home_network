@@ -1,40 +1,43 @@
 ---
 
 - name: bootstrap new server
-  hosts: new
+  hosts: NEW
   become: true
   gather_facts: false
 
   vars:
     ansible_user: root
+    admin_group: sudo
+    #password: password
+    ansible_ssh_private_key_file: ~/.ssh/ansybull
   
-  vars_files:
-    - vars/secrets
+  #vars_files:
+    #- vars/secrets
 
   tasks:
     - name: create deploy user
       user:
-        name: ansybull
+        name: scott
         create_home: true
         groups: "{{ admin_group }}"
-        comment: 'ansible deploy account'
+        comment: 'scott'
         expires: -1
         shell: "/bin/bash"
-        password: "{{ password }}"
+        #password: "{{ password }}"
         
     - name: push ssh key to deploy user
       authorized_key:
-        user: ansybull
+        user: scott
         state: present
         manage_dir: true
-        key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPVhku7YVjXRRdwjRtnfh8k+vXaAyhfpepRblkPcmHei scott"
+        key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAWY9qDM5/3B9eMk/KCRJvJQRXkJu3c4CthAC2csLQMY ansybull deploy"
     
     - name: set up passwordless sudo for deploy user
       copy:
-        dest: /etc/sudoers.d/ansybull
+        dest: /etc/sudoers.d/scott
         owner: root
         mode: 0440
-        content: 'ansybull ALL=(ALL)  NOPASSWD: ALL'
+        content: 'scott ALL=(ALL)  NOPASSWD: ALL'
         validate: /usr/sbin/visudo -cf %s
 
-- import_playbook: site-test.yml
+#- import_playbook: site-test.yml
