@@ -1,0 +1,32 @@
+#Install unifi controller Software
+
+- name: install gpg package required to install gpg keys
+  package:
+    name: gpg
+    state: present
+
+- name: Add an unifi Apt signing key to keyring file
+  ansible.builtin.apt_key:
+    url: https://dl.ui.com/unifi/unifi-repo.gpg
+    keyring: /etc/apt/trusted.gpg.d/unifi-repo.gpg 
+
+- name: add unifi repo & update cache
+  apt_repository:
+    repo: deb https://www.ui.com/downloads/unifi/debian stable ubiquiti
+    state: present
+    update_cache: yes
+
+- name: install unifi packages
+  package:
+    name: "openjdk-8-jre-headless, unifi"
+    state: latest  
+
+- name: enable unifi and mongo services
+  ansible.builtin.service:
+    name: "{{ item }}"
+    enabled: yes
+    state: started
+  with_items:
+    - mongodb.service
+    - unifi.service
+

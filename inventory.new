@@ -1,6 +1,6 @@
 [NEW]
 #localhost ansible_connection=local
-floyd.lan
+aero.lan
 
 [new:children]
 #centos
@@ -27,3 +27,4 @@ floyd.lan
 #localhost
 
 [UNIFI]
+aero.lan

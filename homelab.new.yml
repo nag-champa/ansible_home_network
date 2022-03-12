@@ -13,3 +13,13 @@
     - include_tasks: tasks/base_config.yml
     - include_tasks: tasks/user_accounts.yml
     - include_role: name=install_packages
+
+- name: install unifi controller 
+  hosts: UNIFI
+  become: true
+
+  vars:
+    ansible_user: scott
+
+  tasks:
+    - include_tasks: tasks/unifi-controller.yml
